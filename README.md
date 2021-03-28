@@ -17,14 +17,14 @@ I redid most of the design in order to highlight my previous experiences in whic
 I've made a domain-centric architecture to separate business objects and requirements from implementation choices taken by the engineering team. 
 The following modules that have been created to separate responsibility:<br>
 <br>
-<b>domain</b> : domain Weather object, service for defining business requirements for that specific domain object and strategy interface used for separating third party implementation choice. <br>
+<b>domain</b> : domain Weather object and strategy interface used for separating third party implementation choice. <br>
 Implementation of strategy is responsible with retrieving weather data from a specific third party service. <br>
 <br>
 <b>openweather-client</b>: module responsibile with retrieving weather data from the OpenWeather API. Modified so that connection details are taken from application properties so that any change in API url can be done just by changing the properties + restart of service, instead of changing java code and a new deploy. <br>
 <br>
 <b>persistency-relational</b>: moved persistency to separate module to highlight layer separation. We do not persist domain object but entities specific to a chosen implementation of a database. If NoSQL migration is to be done in the future, a new module for persistency-nosql should be created, any other code staying the same with no change, except service layer that needs minor changes. 
 <br>
-<b>weather-service</b>: service layer offering implementation of business interface from domain module. 
+<b>weather-service</b>: service layer. 
 <br>
 <b>weather-http</b>: http implementation for REST API. Same logic as for persistency-rational, if team changes from spring mvc to GraphQL, a new module to be created for graphql and changed dependency. 
 <br>
