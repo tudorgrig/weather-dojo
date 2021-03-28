@@ -1,7 +1,7 @@
 package com.assignment.spring.weather.client.strategy;
 
 import com.assignment.spring.domain.pojo.Weather;
-import com.assignment.spring.domain.service.WeatherApiStrategy;
+import com.assignment.spring.domain.strategy.WeatherApiStrategy;
 import com.assignment.spring.weather.client.api.WeatherResponse;
 import com.assignment.spring.weather.client.mapper.OpenWeatherMapper;
 import org.springframework.beans.factory.annotation.Value;
